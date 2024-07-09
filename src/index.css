@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color:#e1e0e0;
+  --color : #242424;
+  --Secondary-text-color: rgba(255, 255, 255, 0.87);
+  --Secondary-background-color: #242424;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: var(--bg-color);
+  color:var(--color);
+}
+
+.choose-container{
+  box-shadow: 0 0 3px #292524;
+  background-color: #242424;
+}
+
+.box-for-opponent{
+  padding: 20px;
+  border: 1px solid rgb(193, 185, 185);
+}
+
+.images-section{
+  width: 90px;
+  height:90px;
+  border-radius: 50%;
+}
+
+.box-data{
+  padding: 20px;
+  border: 1px solid rgb(193, 185, 185);
+  margin: 20px 20px 0 20px;
+}
+
+.box-for-opponent-and-topic{
+  width: 90px;
+  height:90px;
+  border-radius: 50%;
+}
+/* button:hover {
+  border-color: #646cff;
+} */
