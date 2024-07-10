@@ -13,7 +13,7 @@ import img10 from '../../public/Andrew.jfif'
 
 export default function Opponents() {
   return (
-    <div className='flex justify-between flex-wrap gap-7 mt-16 mb-10 mr-28' >
+    <div className='flex justify-between flex-wrap gap-7 mt-16 mb-10' >
 
       <div className='box-for-opponent'>
       <img src={img1} alt='Andrew Tate' className='images-section' />

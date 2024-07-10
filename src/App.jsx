@@ -8,7 +8,7 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return ( 
-    <div className='ml-28 mr-28'>
+    <div className='main-container ml-32 mr-32'>
       <Routes>
         <Route  path="/" element={<Header />} />
         <Route  path="/generate" element={<Debate />} />

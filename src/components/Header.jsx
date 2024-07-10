@@ -42,7 +42,7 @@ export default function Header() {
           <p className='cursor-pointer text-xs bg-gray-300 text-black pl-2 pr-2 pt-1 pb-1 rounded-lg hover:opacity-55' onClick={ClearChooseContainer}>cancel</p>
         </div>) : ('') }
         
-        <div className='flex flex-1 justify-between gap-10 ' >
+        <div className='grid grid-cols-2 gap-20' >
           <div>
               { opponentSection ? (<Opponents />) :  ('') }
               { topicSection ? (<Topics />) :  ('') }
