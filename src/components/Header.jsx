@@ -4,6 +4,19 @@ import Topics from './Topics'
 import PickedData from './PickedData'
 
 export default function Header() {
+  const [ TopicsState,setTopicState ] = useState('Choose Topics')
+
+  // for image 
+  const [firstImage,setFirstImage] = useState('')
+  // for Name 
+  const [ firstImageName , setFirstImageName] = useState('')
+  // for Image 
+  const [secondImage,setSecondImage] = useState('')
+  // for naem 
+  const [ secondImageName , setSecondImageName] = useState('')
+
+
+  // usestae for navigation or showing component 
   const [ oneOnOne, setOneOnOne] = useState(false)
   const [ opponentSection,SetOpponentSection ] = useState(false);
   const [ topicSection,SetTopicSection ] = useState(false);
@@ -27,6 +40,28 @@ export default function Header() {
     SetOpponentSection(false)
   }
 
+  // ---------------------------------------------------------------
+  function topicsSelection(data){
+    setTopicState(data)
+  }
+
+  function opponentAfind(image,name){
+
+    if(!firstImage){
+      setFirstImage(image)
+      setFirstImageName(data2)
+    } else if (!secondImage){
+      setSecondImage(image)
+      setSecondImageName(data4)
+    } else {  
+      setFirstImage(image);
+      setFirstImageName(name);
+      setSecondImage('');
+      setSecondImageName('');
+    }
+  }
+ 
+
   return (
      <div className='mt-2 mb-10 ml-1 mr-1'>
         <p className='text-center text-2xl'>Watch twiter debate for what person you ever want.</p> 
@@ -44,10 +79,10 @@ export default function Header() {
         
         <div className='grid grid-cols-2 gap-20' >
           <div>
-              { opponentSection ? (<Opponents />) :  ('') }
-              { topicSection ? (<Topics />) :  ('') }
+              { opponentSection ? (<Opponents props ={opponentAfind} />) :  ('') }
+              { topicSection ? (<Topics props={topicsSelection} />) :  ('') }
           </div>
-          <PickedData /> 
+          <PickedData topicsData = {TopicsState } firstImage ={firstImage}  firstImageName ={firstImageName } secondImage ={secondImage}  secondImageName ={secondImageName} /> 
         </div>
 
     </div>

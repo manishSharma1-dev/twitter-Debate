@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import img1 from '../../public/SamAltsman.jfif'
-import img2 from '../../public/TimCook.jfif'
+// import img1 from '../../public/SamAltsman.jfif'
+// import img2 from '../../public/TimCook.jfif'
 import { useNavigate } from 'react-router-dom'
 
-export default function PickedData() {
+export default function PickedData({ topicsData,firstImage  ,firstImageName,secondImage ,secondImageName }) {
   const navigate = useNavigate();
+  // const [count,setCount] = useState(0)
 
   function passtoDebate(){
     navigate('/generate')
@@ -26,13 +27,13 @@ export default function PickedData() {
 
             <div className='box-data'>
                 <p className='text-sm text-center cursor-text'></p>
-                <img src={img1} alt='sam-altsman' className='box-for-opponent-and-topic' />
-                <p className='font-bold text-sm text-center cursor-text'>Sam Altsman</p>
+                <img src={firstImage} alt='sam-altsman' className='box-for-opponent-and-topic' />
+                <p className='font-bold text-sm text-center cursor-text'>{firstImageName}</p>
             </div>
 
             <div className='box-data'>
-                <img src={img2} alt='Tim Cook' className='box-for-opponent-and-topic' />    
-                <p className='font-bold text-sm text-center cursor-text'>Tim Cook</p>
+                <img src={secondImage} alt='Tim Cook' className='box-for-opponent-and-topic' />    
+                <p className='font-bold text-sm text-center cursor-text'>{secondImageName}</p>
             </div>
 
         </div>
@@ -41,7 +42,7 @@ export default function PickedData() {
       
       <div className='flex flex-col items-center mt-10'>
         <p className='bg-zinc-800 text-sm text-white pt-1 pb-1 pl-3 pr-3 rounded-xl'>Topic</p>
-        <p className='text-2xl pl-3 pr-3'  >Software</p>
+        <p className='text-2xl pl-3 pr-3'  >{topicsData}</p>
       </div>
 
       <div className=' mt-10 flex justify-center'>
