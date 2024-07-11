@@ -3,7 +3,7 @@ import Opponents from './Opponents'
 import Topics from './Topics'
 import PickedData from './PickedData'
 
-export default function Header() {
+export default function Header({ getalldatafromHeader }) {
   const [ TopicsState,setTopicState ] = useState('Choose Topics')
 
   // for image 
@@ -46,13 +46,12 @@ export default function Header() {
   }
 
   function opponentAfind(image,name){
-
     if(!firstImage){
       setFirstImage(image)
-      setFirstImageName(data2)
+      setFirstImageName(name)
     } else if (!secondImage){
       setSecondImage(image)
-      setSecondImageName(data4)
+      setSecondImageName(name)
     } else {  
       setFirstImage(image);
       setFirstImageName(name);
@@ -60,7 +59,11 @@ export default function Header() {
       setSecondImageName('');
     }
   }
- 
+
+  function finddatafromPickeddata(topicsData,firstImage,secondImage,firstImageName,secondImageName){
+    getalldatafromHeader(topicsData,firstImage,secondImage,firstImageName,secondImageName)
+    console.log("data passesd successuflly from the header to the app.js")
+  }
 
   return (
      <div className='mt-2 mb-10 ml-1 mr-1'>
@@ -82,7 +85,7 @@ export default function Header() {
               { opponentSection ? (<Opponents props ={opponentAfind} />) :  ('') }
               { topicSection ? (<Topics props={topicsSelection} />) :  ('') }
           </div>
-          <PickedData topicsData = {TopicsState } firstImage ={firstImage}  firstImageName ={firstImageName } secondImage ={secondImage}  secondImageName ={secondImageName} /> 
+          <PickedData topicsData = {TopicsState } firstImage ={firstImage}  firstImageName ={firstImageName } secondImage ={secondImage}  secondImageName ={secondImageName} props={finddatafromPickeddata} /> 
         </div>
 
     </div>

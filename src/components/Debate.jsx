@@ -3,9 +3,12 @@ import img1 from '../../public/SamAltsman.jfif'
 import img2 from '../../public/Billgates.jfif'
 import { useNavigate } from 'react-router-dom'
 
-export default function Debate() {
+export default function Debate({ receivedtopicsData,receivedfirstImage,receivedfirstImageName,receivedsecondImage,receivedsecondImageName }) {
   const [para1,setPara1] = useState()
   const [para2,setPara2] = useState()
+  console.log("clg from debate component ",receivedtopicsData)
+  console.log("clg from debate component ",receivedfirstImageName)
+  console.log("clg from debate component ",receivedsecondImageName)
 
   useEffect(() => {
 
@@ -60,11 +63,11 @@ export default function Debate() {
       {/* 1st user  */}
       <div className='mb-6'>
         <div className='flex justify-start gap-2 items-center'>
-            <img src={img1} alt='profile-img' className='rounded-full  w-10 h-10' />
+            <img src={receivedfirstImage} alt='profile-img' className='rounded-full  w-10 h-10' />
 
             <div className='flex flex-col text-xs'>
                 <p>Full Name</p>
-                <p>username</p>
+                <p>{receivedfirstImageName}</p>
             </div>
         </div>
         
@@ -75,11 +78,11 @@ export default function Debate() {
       
       <div>
         <div className='flex justify-start gap-2 items-center'>
-            <img src={img2} alt='profile-img' className='rounded-full w-10 h-10' />
+            <img src={receivedsecondImage} alt='profile-img' className='rounded-full w-10 h-10' />
 
             <div className='flex flex-col text-xs'>
                 <p>Full Name</p>
-                <p>username</p>
+                <p>{receivedsecondImageName}</p>
             </div>
         </div>
         

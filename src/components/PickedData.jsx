@@ -4,11 +4,12 @@ import React, { useState } from 'react'
 // import img2 from '../../public/TimCook.jfif'
 import { useNavigate } from 'react-router-dom'
 
-export default function PickedData({ topicsData,firstImage  ,firstImageName,secondImage ,secondImageName }) {
+export default function PickedData({ props, topicsData,firstImage  ,firstImageName,secondImage ,secondImageName }) {
   const navigate = useNavigate();
   // const [count,setCount] = useState(0)
 
   function passtoDebate(){
+    props(topicsData,firstImage,secondImage,firstImageName,secondImageName);
     navigate('/generate')
   }
 

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css'
 import Debate from './components/Debate'
 import Header from './components/Header'
@@ -7,11 +8,28 @@ import { Routes, Route } from 'react-router-dom';
 // import Opponents from './components/Opponents'
 
 function App() {
+  const [ receivedtopicsData, setReceivedtopicsData ] = useState('')
+  const [ receivedfirstImage, setReceivedfirstImage ] = useState('')
+  const [ receivedsecondImage, setReceivedsecondImage ] = useState('')
+  const [ receivedfirstImageName, setReceivedfirstImageName ] = useState('')
+  const [ receivedsecondImageName, setReceivedsecondImageName ] = useState('')
+  
+
+  function getalldatafromHeader(topicsData,firstImage,secondImage,firstImageName,secondImageName){
+    console.log("data passed to debate compopnetn successfully from app.js")
+    console.log('clg from app js ', topicsData)
+    setReceivedtopicsData(topicsData)
+    setReceivedfirstImage(firstImage)
+    setReceivedfirstImageName(firstImageName)
+    setReceivedsecondImage(secondImage)
+    setReceivedsecondImageName(secondImageName)
+  }
+
   return ( 
     <div className='main-container ml-32 mr-32'>
       <Routes>
-        <Route  path="/" element={<Header />} />
-        <Route  path="/generate" element={<Debate />} />
+        <Route  path="/" element={<Header getalldatafromHeader={getalldatafromHeader} />} />
+        <Route  path="/generate" element={<Debate receivedtopicsData={receivedtopicsData} receivedfirstImage={receivedfirstImage} receivedsecondImage={receivedsecondImage} receivedfirstImageName={receivedfirstImageName} receivedsecondImageName={receivedsecondImageName} />} />
       </Routes>
     </div>
   )

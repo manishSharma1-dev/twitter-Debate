@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import img1 from '../../public/SamAltsman.jfif'
 import img2 from '../../public/TimCook.jfif'
 import img3 from '../../public/SundarPichai.jfif'
