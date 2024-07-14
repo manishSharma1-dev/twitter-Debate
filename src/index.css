@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --bg-color:#e1e0e0;
-  --color : #242424;
+  --bg-color:#ffffff;
+  --color : #1a202c;
   --Secondary-text-color: rgba(255, 255, 255, 0.87);
   --Secondary-background-color: #242424;
 }
@@ -50,3 +50,13 @@ body{
 /* button:hover {
   border-color: #646cff;
 } */
+
+.fakeopponentlayout{
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.box-data2{
+  padding: 15px;
+  border: 1px solid rgb(193, 185, 185);
+}
