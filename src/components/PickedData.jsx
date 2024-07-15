@@ -37,7 +37,6 @@ export default function PickedData({ props, topicsData,firstImage  ,firstImageNa
         <div className='flex justify-between mt-1'>
 
             <div className='box-data'>
-                <p className='text-sm text-center cursor-text'></p>
                 <img src={firstImage?firstImage:ProfileIcon } alt='sam-altsman' className='box-for-opponent-and-topic' />
                 <p className='font-bold text-sm text-center cursor-text'>{firstImageName}</p>
             </div>
@@ -52,12 +51,12 @@ export default function PickedData({ props, topicsData,firstImage  ,firstImageNa
       {/* for opponent section ends here */}
       
       <div className='flex flex-col items-center mt-10'>
-        <p className='bg-zinc-800 text-sm text-white pt-1 pb-1 pl-3 pr-3 rounded-xl'>Topic</p>
+        <p className='bg-zinc-800 text-sm text-white pt-1 pb-1 pl-3 pr-3 rounded-md'>Topic</p>
         <p className='text-xl  pl-3 pr-3 pt-4 border-red-800 border-b-2 '>{topicsData}</p>
       </div>
 
       <div className=' mt-10 flex justify-center'>
-      <button className='bg-zinc-900 text-white pt-1 pb-1 pl-4 pr-4 rounded-xl text-center mb-5 ' onClick={passtoDebate}>Generate</button>
+      <button className='bg-zinc-900 text-white pt-1 pb-1 pl-4 pr-4 rounded-md text-center mb-5 ' onClick={passtoDebate}>Generate</button>
       </div>
 
     </div>

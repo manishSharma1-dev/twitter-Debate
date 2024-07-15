@@ -2,12 +2,10 @@ import React, { useState } from 'react'
 import Opponents from './Opponents'
 import Topics from './Topics'
 import PickedData from './PickedData'
-import FakeOpponentLayout from './fakeLayout/FakeOpponentLayout'
+
 
 export default function Header({ getalldatafromHeader }) {
   const [ TopicsState,setTopicState ] = useState('Choose Topics')
-  const [ fakedata,setFakeData ] = useState(true);
-
   // for image 
   const [firstImage,setFirstImage] = useState('')
   // for Name 
@@ -20,13 +18,12 @@ export default function Header({ getalldatafromHeader }) {
 
   // usestae for navigation or showing component 
   const [ oneOnOne, setOneOnOne] = useState(false)
-  const [ opponentSection,SetOpponentSection ] = useState(false);
+  const [ opponentSection,SetOpponentSection ] = useState(true);
   const [ topicSection,SetTopicSection ] = useState(false);
 
 
   function handleOneOnOne(){
     setOneOnOne(true)
-    setFakeData(false)
   }
 
   function ClearChooseContainer(){
@@ -41,6 +38,10 @@ export default function Header({ getalldatafromHeader }) {
   function showTopicsSection(){
     SetTopicSection(true)
     SetOpponentSection(false)
+  }
+
+  function openGithub(){
+    window.open('https://github.com/manish-sharma-dev')
   }
 
   // ---------------------------------------------------------------
@@ -74,7 +75,7 @@ export default function Header({ getalldatafromHeader }) {
         <h1 className='text-2xl font-bold  text-center mt-5'>Choose  <span className='underline underline-offset-4 decoration-red-700 decoration-wavy '>Opponents</span></h1>
         <div className='flex justify-between mt-16 underline underline-offset-4 '>
             <p className='cursor-pointer hover:underline underline-offset-4 relative text-sm font-bold  hover:text-rose-800' onClick={handleOneOnOne} >One on One</p>
-            <p className='cursor-pointer hover:underline underline-offset-4  '>Check on <span className='text-sm underline underline-offset-4 decoration-violet-700 text-rose-700 font-bold'> Github</span></p>
+            <p className='cursor-pointer hover:underline underline-offset-4' onClick={openGithub}>Check on <span className='text-sm underline underline-offset-4 decoration-violet-700 text-rose-700 font-bold' onClick={openGithub}> Github</span></p>
         </div>
 
         {oneOnOne === true? (  <div className= 'choose-container bg-black text-white flex justify-between w-72 pt-2 pb-2 mt-3 rounded-2xl text-sm box-border pl-4 pr-4 items-center' >
@@ -86,7 +87,7 @@ export default function Header({ getalldatafromHeader }) {
         
         <div className='grid grid-cols-2 gap-20' >
           <div>
-              {fakedata? (<FakeOpponentLayout />) :( opponentSection ? (<Opponents props ={opponentAfind} />) :  ('')) }
+              { opponentSection ? (<Opponents props ={opponentAfind} />) :  ('') }
               { topicSection ? (<Topics props={topicsSelection} />) :  ('') }
           </div>
           <PickedData topicsData = {TopicsState } firstImage ={firstImage}  firstImageName ={firstImageName } secondImage ={secondImage}  secondImageName ={secondImageName} props={finddatafromPickeddata} /> 

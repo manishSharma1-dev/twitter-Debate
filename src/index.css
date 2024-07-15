@@ -37,14 +37,14 @@ body{
 }
 
 .box-data{
-  padding: 20px;
+  padding: 30px 20px 30px 20px;
   border: 1px solid rgb(193, 185, 185);
   margin: 20px 20px 0 20px;
 }
 
 .box-for-opponent-and-topic{
-  width: 90px;
-  height:90px;
+  width: 70px;
+  height:70px;
   border-radius: 50%;
 }
 /* button:hover {

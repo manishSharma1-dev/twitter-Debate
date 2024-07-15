@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Verify from '../../public/verify.png'
 
 export default function Debate({ receivedtopicsData, receivedfirstImage, receivedfirstImageName, receivedsecondImage, receivedsecondImageName }) {
 
@@ -76,20 +77,20 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
   }
 
   return (
-    <div className='ml-[19vw] mr-[19vw]  pl-10 pr-10 bg-yellow-100 h-[100vh]'>
-      <button className='pt-3 text-sm underline underline-offset-2 focus:opacity-50 focus:text-orange-400' onClick={movebacktohome}>Home</button>
+    <div className=' mt-1 mb-1 ml-60 mr-60 pl-10 pr-10 border-gray-300 border-x-2 min-h-[100vh] h-auto'>
+      <button className='pt-3 text-sm underline decoration-red-500 decoration-wavy underline-offset-2 focus:opacity-50 focus:text-orange-400' onClick={movebacktohome}>Home</button>
 
       <div className='text-sm flex flex-col pt-10'>
         {displayedText.map((segment, index) => (
           <div key={index} className='mb-6'>
-            <div className='flex justify-start gap-2 items-center'>
-              <img src={segment.includes('Pichai:') ? receivedfirstImage : receivedsecondImage} alt='profile-img' className='rounded-full  w-10 h-10' />
-              <div className='flex flex-col text-xs'>
-                <p>Full Name</p>
-                <p>{segment.includes('Pichai:') ? receivedfirstImageName : receivedsecondImageName}</p>
+            <div className='flex gap-3 items-start'>
+              <img src={segment.includes('Pichai:') ? receivedfirstImage : receivedsecondImage} alt='profile-img' className='rounded-full w-7 h-7 shadow-slate-600 shadow ' />
+              <div className='flex items-center text-xs gap-1 mb-0 '>
+                <p className='font-semibold'>{segment.includes('Pichai:') ? receivedfirstImageName : receivedsecondImageName}</p>
+                <img src={Verify} alt='verify' className='w-3 h-3' />
               </div>
             </div>
-            <p className='mt-2 text-xs'>{segment.replace(/Pichai:|Cook:/, '')}</p>
+            <p className=' text-xs ml-10 mb-3'>{segment.replace(/Pichai:|Cook:/, '')}</p>
           </div>
         ))}
       </div>
