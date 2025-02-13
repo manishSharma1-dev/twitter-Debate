@@ -13,7 +13,7 @@ export default function PickedData({ props, topicsData,firstImage  ,firstImageNa
 
   return (
     <div>
-      <div className='flex justify-between px-20 pt-3 xs:pt-6 xs:px-24'>
+      <div className='flex justify-between px-20 pt-3 xs:pt-6 xs:px-16 md:px-16'>
         <p className='text-center'>Opponent A</p>
         <p className='text-center'>Opponent B</p>
       </div>

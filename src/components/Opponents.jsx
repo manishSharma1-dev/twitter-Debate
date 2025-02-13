@@ -77,7 +77,7 @@ export default function Opponents({props}) {
 
 
   return (
-    <div className='flex justify-between flex-wrap gap-y-5 gap-x-3 pt-5 md:px-16 xs:px-24' >
+    <div className='flex justify-between flex-wrap gap-y-5 gap-x-3 pt-5 md:px-16 xs:px-16' >
 
       {images.map((image)=>(
         <div className='border border-black border-opacity-35 px-5 py-5' key={image.id} onClick={()=> {
