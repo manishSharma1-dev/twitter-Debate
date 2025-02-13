@@ -2,10 +2,10 @@ import React from 'react'
 
 const topicsIdea = [
   {
-    data : 'finance',
+    data: 'Ai',
   },
   {
-    data: 'Ai',
+    data : 'Giving robots conciousness',
   },
   {
     data: 'Software',
@@ -14,42 +14,54 @@ const topicsIdea = [
     data : 'Robots',
   },
   {
-    data: 'Quantum Computing',
+    data: 'Quantum-Computing',
   },
   {
-    data: 'Software',
+    data: 'Robots-workers',
   },
   {
-    data : 'Space',
+    data : 'Exploring-other-dimension',
   },
   {
-    data: 'Electrical Vechile',
+    data: 'Electrical-Vechile',
   },
   {
-    data: 'Investing',
+    data: 'Web-3',
   },
   {
-    data: 'Virtual Reality',
+    data: 'Virtual-Reality',
   },
   {
     data : 'Blockchain',
   },
   {
-    data: 'Education',
+    data : 'bio-Weapon',
   },
   {
-    data: 'Web-3',
+    data : 'LLM',
   },
+  {
+    data : 'Deepseek vs qwen',
+  },
+  {
+    data : 'chatgpt',
+  },
+  {
+    data : 'Agi',
+  },
+  {
+    data : 'Nuclear power plant',
+  }
 ]
 
 export default function Topics({ props }) {
 
   return (
-    <div className='flex justify-between flex-wrap flex-shrink-0 gap-4 mt-16 mb-10 mr-5'>
+    <div className='flex justify-between flex-wrap flex-shrink-0 gap-y-5 gap-x-3 pt-5 md:px-16 xs:px-24'>
 
       {topicsIdea.map((data,id) => (
-        <div className='box-for-opponent' key={id}  onClick={()=> { props(data.data)}}>
-          <p className='font-bold text-sm cursor-pointer text-center' onClick={()=> { props(data.data)}}> {data.data}</p>
+        <div className={`text-white px-2 py-1 rounded-md bg-black`} key={id}  onClick={()=> {props(data.data)}}>
+          <p className='text-xs cursor-pointer text-center' onClick={()=> { props(data.data)}}> {data.data}</p>
         </div>
       ))}
 

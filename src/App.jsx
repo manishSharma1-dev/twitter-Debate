@@ -26,7 +26,7 @@ function App() {
   }
 
   return ( 
-    <div className='main-container ml-32 mr-32'>
+    <div className='main-container ml-32 mr-32 xs:ml-0 xs:mr-0 xs:pl-3 xs:pr-3'>
       <Routes>
         <Route  path="/" element={<Header getalldatafromHeader={getalldatafromHeader} />} />
         <Route  path="/generate" element={<Debate receivedtopicsData={receivedtopicsData} receivedfirstImage={receivedfirstImage} receivedsecondImage={receivedsecondImage} receivedfirstImageName={receivedfirstImageName} receivedsecondImageName={receivedsecondImageName} />} />

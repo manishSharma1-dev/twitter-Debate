@@ -14,52 +14,62 @@ const images = [
   {
     id : 1,
     image : img1,
-    name : 'Sam Altsman',
+    name : 'SamAltsman',
+    shortNote : 'CEO of Open Ai'
   },
   {
     id :2,
     image : img2,
-    name : 'Tim Cook',
+    name : 'TimCook',
+    shortNote : 'Current CEO of Apple company'
   },
   {
     id :3,
     image : img3,
-    name : 'Sundar Pichai',
+    name : 'SundarPichai',
+    shortNote : 'CEO of Google'
   },
   {
     id :4,
     image : img4,
-    name : 'Bill Gate',
+    name : 'BillGate',
+    shortNote : 'Previos CEO of Microsoft'
   },
   {
     id :5,
     image : img5,
-    name : 'Steve Job',
+    name : 'SteveJob',
+    shortNote : 'Previous CEO of Apple'
   },
   {
     id :6,
     image : img6,
     name : 'Issac',
+    shortNote : 'A scientist Gave Netwon laws'
   },
   {
     id :7,
     image : img7,
-    name : 'Elon Musk',
+    name : 'ElonMusk',
+    shortNote : 'CEO of twitter,tesla,spacex and more'
   },
   {
     id :8,
     image : img8,
     name : 'Cheng',
+    shortNote : 'CEO of nnividia'
   },
   {
     id :9,
     image : img9,
-    name : 'Modi Ji',
+    name : 'ModiJi',
+    shortNote : 'PrimeMinister of India'
   },
   {
     id :10,
     image : img10,
     name : 'Andrew',
+    shortNote : 'A online influencer that teaches how to make money online'
   },
 ]
 
@@ -67,15 +77,15 @@ export default function Opponents({props}) {
 
 
   return (
-    <div className='flex justify-between flex-wrap gap-7 mt-16 mb-10' >
+    <div className='flex justify-between flex-wrap gap-y-5 gap-x-3 pt-5 md:px-16 xs:px-24' >
 
       {images.map((image)=>(
-        <div className='box-for-opponent' key={image.id} onClick={()=> {
+        <div className='border border-black border-opacity-35 px-5 py-5' key={image.id} onClick={()=> {
           props(image.image, image.name)
           }} >
 
-          <img src={image.image} alt='Andrew Tate' className='images-section' />
-          <p className='font-bold text-sm text-center cursor-text'>{image.name}</p>
+          <img src={image.image} alt='Andrew Tate' className='rounded-[50%] w-16 h-16' />
+          <p className='text-xs text-center cursor-text'>{image.name}</p>
         </div>
       ))}
 
