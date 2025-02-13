@@ -31,7 +31,7 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
   
         console.log(payload)
   
-        const response = await fetch('http://localhost:3000/generate', {
+        const response = await fetch('https://twiiter-debate-serverpart.vercel.app/generate', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -47,18 +47,11 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
   
         const data = await response.text();
   
-        console.log("Data: ",data)
-  
         // Split the text into segments
         const segments = data.split(/\n\s*\n/); // Adjust this based on your text format
   
-        console.log("segments",segments)
-        
         const segmentForOpponentA = segments.filter((segment) => segment.includes(`${receivedfirstImageName}:`));
         const segmentForOpponentB = segments.filter((segment) => segment.includes(`${receivedsecondImageName}:`));
-  
-        console.log(segmentForOpponentA) 
-        console.log(segmentForOpponentB)
   
         setOpponentAsegment(segmentForOpponentA);
         setOpponentBsegment(segmentForOpponentB);

@@ -43,7 +43,6 @@ export default function Header({ getalldatafromHeader }) {
 
   function finddatafromPickeddata(topicsData,firstImage,secondImage,firstImageName,secondImageName){
     getalldatafromHeader(topicsData,firstImage,secondImage,firstImageName,secondImageName)
-    console.log("data passesd successuflly from the header to the app.js")
   }
 
   return (
