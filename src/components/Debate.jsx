@@ -46,6 +46,8 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
         }
   
         const data = await response.text();
+
+        console.log("Data from llm fetched")
   
         // Split the text into segments
         const segments = data.split(/\n\s*\n/); // Adjust this based on your text format

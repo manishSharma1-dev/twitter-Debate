@@ -57,7 +57,7 @@ const topicsIdea = [
 export default function Topics({ props }) {
 
   return (
-    <div className='flex justify-between flex-wrap flex-shrink-0 gap-y-5 gap-x-3 pt-5 md:px-16 xs:px-24'>
+    <div className='flex justify-between flex-wrap flex-shrink-0 gap-y-5 gap-x-3 pt-5 md:px-16 xs:px-8'>
 
       {topicsIdea.map((data,id) => (
         <div className={`text-white px-2 py-1 rounded-md bg-black`} key={id}  onClick={()=> {props(data.data)}}>

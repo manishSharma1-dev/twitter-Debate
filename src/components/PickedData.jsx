@@ -13,12 +13,12 @@ export default function PickedData({ props, topicsData,firstImage  ,firstImageNa
 
   return (
     <div>
-      <div className='flex justify-between px-20 pt-3 xs:pt-6 xs:px-16 md:px-16'>
+      <div className='flex justify-between px-20 pt-3 xs:pt-6 xs:px-8 md:px-16'>
         <p className='text-center'>Opponent A</p>
         <p className='text-center'>Opponent B</p>
       </div>
 
-      <div className='flex justify-between pt-7 px-20 xs:px-24'>
+      <div className='flex justify-between pt-7 px-20 xs:px-8 md:px-16'>
           <div className='border border-black px-4 py-5'>
               <img src={firstImage?firstImage:ProfileIcon } alt='sam-altsman' className='box-for-opponent-and-topic' />
               <p className=' text-xs text-center cursor-text'>{firstImageName}</p>
