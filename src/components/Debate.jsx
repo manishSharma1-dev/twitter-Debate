@@ -34,9 +34,11 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
         const response = await fetch('https://twiiter-debate-serverpart.vercel.app/generate', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "Accept": "application/json"
           },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(payload),
+          credentials: "include"
         });
   
         if (!response.ok) {
