@@ -32,7 +32,7 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
   
         console.log(payload)
   
-        const response = await fetch('https://twitter-backend-eight-rho.vercel.app/generate', {
+        const response = await fetch('https://twitter-backend-xi.vercel.app/generate', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
