@@ -132,9 +132,9 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
             <div className='flex justify-center py-2'>
               <p className='bg-black text-white inline text-center px-6 py-1 rounded-md text-xs cursor-pointer hover:bg-white hover:text-black border border-black' onClick={movebacktohome}>Generate another...</p>
             </div>
-            <div className='flex flex-col lg:px-96 xs:px-10'>
+            <div className='flex flex-col lg:px-96 xs:px-3'>
               {displayedText.map((segment, index) => (
-                <div key={index} className='mb-6 shadow-md shadow-neutral-200 border border-neutral-200 border-opacity-55 px-3 py-2 rounded-md'>
+                <div key={index} className='mb-6 shadow-md shadow-neutral-200 border border-neutral-200 border-opacity-55 px-3 xs:py-1 md:py-2 rounded-md'>
                   <div className='flex justify-start gap-1 items-center'>
                     <img src={segment.includes(`${receivedfirstImageName}:`) ? receivedfirstImage : receivedsecondImage} alt='profile-img' className='rounded-full  size-8 hover:grayscale cursor-pointer' />
                     <div className='flex flex-col text-xs'>
@@ -145,7 +145,7 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
                       <p className='text-[10px] opacity-40'>{segment.includes(`${receivedfirstImageName}:`) ? receivedfirstImageName + "@ef34" : receivedsecondImageName + "$23e"}</p>
                     </div>
                   </div>
-                  <p className='mt-2 text-[10px] opacity-80'>{segment.replace(/receivedfirstImageName:|receivedsecondImageName:/, '')}</p>
+                  <p className='mt-2 text-[12px] opacity-80'>{segment.replace(/receivedfirstImageName:|receivedsecondImageName:/, '')}</p>
                 </div>
               ))}
             </div>
