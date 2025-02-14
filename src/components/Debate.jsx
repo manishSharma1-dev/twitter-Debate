@@ -14,6 +14,7 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
   const [displayedText, setDisplayedText] = useState([]);
 
   const [fethchingDatafromLlm,setFethchingDatafromLlm] = useState(false)
+  const [error,seterror] = useState(null)
 
   // Fetch and parse the debate text
   useEffect(() => {
@@ -31,23 +32,29 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
   
         console.log(payload)
   
-        const response = await fetch('https://twiiter-debate-serverpart.vercel.app/generate', {
+        const response = await fetch('https://twitter-backend-eight-rho.vercel.app/generate', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            "Accept": "application/json"
           },
-          body: JSON.stringify(payload),
-          credentials: "include"
+          body: JSON.stringify(payload)
         });
   
         if (!response.ok) {
           const errText = await response.text();
           console.log(errText);
+          seterror(errText)
           return;
         }
   
         const data = await response.text();
+
+        if(!data){
+          const errText = await response.text();
+          console.log(errText);
+          seterror(errText)
+          return;
+        }
 
         console.log("Data from llm fetched")
   
@@ -63,8 +70,9 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
         setFethchingDatafromLlm(false)
 
       } catch (error) {
-        console.log("Failed to Generate: ",error)
+        console.log("Failed to Generate: ",error?.message)
         setFethchingDatafromLlm(false)
+        seterror(error?.message)
         return;
       }
       
@@ -116,6 +124,11 @@ export default function Debate({ receivedtopicsData, receivedfirstImage, receive
           </div>
       ): (
           <div>
+
+            {error && 
+                <div className="text-red-500 text-center p-4 xs:text-[10px] md:text-sm">Error: {error}</div>
+            }
+            
             <div className='flex justify-center py-2'>
               <p className='bg-black text-white inline text-center px-6 py-1 rounded-md text-xs cursor-pointer hover:bg-white hover:text-black border border-black' onClick={movebacktohome}>Generate another...</p>
             </div>
